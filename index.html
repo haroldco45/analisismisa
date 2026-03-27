@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distrileco - Dashboard Maestro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/1162/1162456.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+        body { font-family: 'Outfit', sans-serif; background-color: #f0f2f5; }
+        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 1rem; box-shadow: 0 8px 32px rgba(0,0,0,0.05); }
+        .gradient-blue { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
+        .btn-whatsapp { background-color: #25D366; color: white; transition: all 0.3s; }
+        .btn-whatsapp:hover { background-color: #128C7E; transform: translateY(-2px); }
+    </style>
+</head>
+<body class="pb-10">
+
+    <nav class="gradient-blue text-white p-6 shadow-lg mb-6">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-extrabold tracking-tight">DISTRILECO S.A.S.</h1>
+                <p class="text-blue-100 text-xs uppercase tracking-widest">Panel de Control Financiero 2026</p>
+            </div>
+            <div class="text-right hidden md:block">
+                <p id="clock" class="text-sm font-light"></p>
+                <span class="text-xs bg-white/20 px-2 py-1 rounded">Caucasia, Antioquia</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 space-y-6">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <button onclick="enviarWhatsApp()" class="btn-whatsapp p-4 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.891 11.891-11.891 3.181 0 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.481 8.403 0 6.556-5.332 11.891-11.891 11.891-2.01 0-3.98-.511-5.718-1.483l-6.275 1.644zm6.115-4.695l.366.218c1.554.922 3.332 1.409 5.158 1.409 5.404 0 9.801-4.397 9.801-9.801s-4.397-9.801-9.801-9.801-9.801 4.397-9.801 9.801c0 1.947.581 3.841 1.68 5.438l.237.341-1.104 4.032 4.128-1.082z"/></svg>
+                Enviar Reporte a WhatsApp
+            </button>
+            <button onclick="exportarExcel()" class="bg-blue-700 text-white p-4 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg hover:bg-blue-800 transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                Preparar Datos para Excel
+            </button>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="glass-card p-5 border-b-4 border-blue-600">
+                <p class="text-gray-500 text-xs font-bold uppercase">Gasto Total 2025</p>
+                <h2 class="text-xl font-black text-slate-800">$4.824.952.710</h2>
+                <p class="text-[10px] text-red-600 font-bold mt-1">↑ 6.8% vs 2024 (COP)</p>
+            </div>
+            <div class="glass-card p-5 border-b-4 border-green-500">
+                <p class="text-gray-500 text-xs font-bold uppercase">Ahorro en Servicios</p>
+                <h2 class="text-xl font-black text-slate-800">$215.182.985</h2>
+                <p class="text-[10px] text-green-600 font-bold mt-1">Optimización del 26.8%</p>
+            </div>
+            <div class="glass-card p-5 border-b-4 border-orange-500">
+                <p class="text-gray-500 text-xs font-bold uppercase">Alerta Mantenimiento</p>
+                <h2 class="text-xl font-black text-slate-800">437% Incremento</h2>
+                <p class="text-[10px] text-orange-600 font-bold mt-1">Revisar inversión en activos</p>
+            </div>
+            <div class="glass-card p-5 border-b-4 border-red-600">
+                <p class="text-gray-500 text-xs font-bold uppercase">Índice Deterioro</p>
+                <h2 class="text-xl font-black text-slate-800">$53.675.048</h2>
+                <p class="text-[10px] text-red-600 font-bold mt-1">Riesgo en Cartera (Bajo Cauca)</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="glass-card p-6 lg:col-span-2">
+                <h3 class="font-bold text-slate-700 mb-4 uppercase text-sm italic">Composición de Gastos por Categoría</h3>
+                <div class="h-[300px]">
+                    <canvas id="mainChart"></canvas>
+                </div>
+            </div>
+            <div class="glass-card p-6">
+                <h3 class="font-bold text-slate-700 mb-4 uppercase text-sm">Guía de Medidas</h3>
+                <ul class="text-xs space-y-4 text-gray-600">
+                    <li class="flex gap-2">
+                        <span class="font-bold text-blue-600">1.</span>
+                        <span>Auditar el gasto de <b>$394M en Mantenimiento</b>. Diferenciar si es reparación o mejora de flota.</span>
+                    </li>
+                    <li class="flex gap-2">
+                        <span class="font-bold text-blue-600">2.</span>
+                        <span><b>Gestión de Cartera:</b> Los $53M en deterioro sugieren problemas de recaudo en puntos de venta remotos.</span>
+                    </li>
+                    <li class="flex gap-2">
+                        <span class="font-bold text-blue-600">3.</span>
+                        <span>Mantener la <b>Eficiencia en Servicios</b>. El ahorro de $215M compensó el aumento de nómina.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="glass-card overflow-hidden">
+            <div class="p-6 bg-slate-50 border-b flex justify-between items-center">
+                <h3 class="font-bold text-slate-700 uppercase text-sm">Detalle de Gastos (Cifras en COP)</h3>
+                <span class="text-[10px] bg-blue-100 text-blue-700 px-2 py-1 rounded">Fuente: Reporte Distrileco 2025</span>
+            </div>
+            <div class="overflow-x-auto">
+                <table id="tablaDatos" class="w-full text-left text-sm">
+                    <thead>
+                        <tr class="bg-slate-100 text-slate-600 border-b">
+                            <th class="px-6 py-3 font-bold">Concepto</th>
+                            <th class="px-6 py-3 font-bold text-right">2025 (COP)</th>
+                            <th class="px-6 py-3 font-bold text-right">2024 (COP)</th>
+                            <th class="px-6 py-3 font-bold text-center">Variación %</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="mt-10 text-center text-gray-400 p-6">
+        <p class="text-xs">&copy; 2026. Este software y sus análisis son propiedad de <strong>Vibras Positivas</strong>.</p>
+        <p class="text-[10px] mt-1 italic italic">Análisis estratégico para Distrileco - Región Bajo Cauca Antioqueño.</p>
+    </footer>
+
+    <script>
+        // DATOS MAESTROS
+        const dataGastos = [
+            { c: "Personal", v25: 1879270936, v24: 1808517207 },
+            { c: "Honorarios", v25: 77528110, v24: 43199819 },
+            { c: "Impuestos", v25: 73103852, v24: 77917186 },
+            { c: "Servicios", v25: 587356453, v24: 802539438 },
+            { c: "Mantenimiento", v25: 394759255, v24: 73428471 },
+            { c: "Viajes", v25: 279773067, v24: 277280026 },
+            { c: "Depreciación", v25: 196571657, v24: 0 },
+            { c: "Financieros", v25: 661534039, v24: 800432978 },
+            { c: "Deterioro", v25: 53675048, v24: 59800 },
+            { c: "Diversos", v25: 503421798, v24: 516973602 }
+        ];
+
+        // RENDERIZAR TABLA
+        const tbody = document.querySelector('#tablaDatos tbody');
+        dataGastos.forEach(item => {
+            const varPerc = item.v24 === 0 ? "N/A" : (((item.v25 - item.v24) / item.v24) * 100).toFixed(1) + "%";
+            const row = `
+                <tr class="hover:bg-blue-50 transition">
+                    <td class="px-6 py-4 font-semibold text-slate-700 uppercase text-xs">${item.c}</td>
+                    <td class="px-6 py-4 text-right font-mono">$${item.v25.toLocaleString('es-CO')}</td>
+                    <td class="px-6 py-4 text-right font-mono text-gray-400">$${item.v24.toLocaleString('es-CO')}</td>
+                    <td class="px-6 py-4 text-center font-bold ${parseFloat(varPerc) > 10 ? 'text-red-500' : 'text-green-600'} text-xs">${varPerc}</td>
+                </tr>`;
+            tbody.innerHTML += row;
+        });
+
+        // RELOJ COLOMBIA
+        setInterval(() => {
+            const now = new Date();
+            document.getElementById('clock').innerText = now.toLocaleString('es-CO', { 
+                weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', 
+                hour: '2-digit', minute: '2-digit', second: '2-digit' 
+            });
+        }, 1000);
+
+        // GRÁFICO
+        const ctx = document.getElementById('mainChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: dataGastos.map(d => d.c),
+                datasets: [
+                    { label: '2025 (COP)', data: dataGastos.map(d => d.v25), backgroundColor: '#1e3a8a' },
+                    { label: '2024 (COP)', data: dataGastos.map(d => d.v24), backgroundColor: '#93c5fd' }
+                ]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
+        });
+
+        // FUNCIONES DE COMUNICACIÓN
+        function enviarWhatsApp() {
+            const msj = `*REPORTE FINANCIERO DISTRILECO 2025*%0A` +
+                        `----------------------------%0A` +
+                        `📍 Región: Bajo Cauca%0A` +
+                        `✅ Gasto Total: $4.824M (COP)%0A` +
+                        `⚠️ Alerta: Mantenimiento +437%%0A` +
+                        `🛡️ Ahorro: Servicios -26.8%%0A` +
+                        `📉 Deterioro Cartera: $53.6M%0A` +
+                        `----------------------------%0A` +
+                        `_Generado por Vibras Positivas_`;
+            window.open(`https://wa.me/573117700431?text=${msj}`, '_blank');
+        }
+
+        function exportarExcel() {
+            alert("Socia, los datos están listos en la tabla inferior. Puedes seleccionar, copiar (Ctrl+C) y pegar directamente en Excel manteniendo el formato de moneda.");
+        }
+    </script>
+</body>
+</html>
