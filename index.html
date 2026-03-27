@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Distrileco - Dashboard Estratégico 2026</title>
+    <title>Distrileco - Dashboard de Alta Gerencia</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -11,111 +11,139 @@
     <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/1162/1162456.png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; color: #1e293b; }
-        .glass-card { background: white; border-radius: 1.25rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; }
-        .gradient-brand { background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); }
-        .accent-border { border-left: 5px solid #2563eb; }
-        .btn-action { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
-        .btn-action:hover { transform: translateY(-2px); filter: brightness(1.1); }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f1f5f9; color: #0f172a; }
+        .glass-card { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); border-radius: 1.5rem; border: 1px solid rgba(226, 232, 240, 0.8); box-shadow: 0 4px 20px -2px rgba(0,0,0,0.05); }
+        .gradient-header { background: linear-gradient(135deg, #063970 0%, #1e40af 100%); }
+        .input-focus:focus { ring: 2px; ring-color: #2563eb; border-color: #2563eb; }
+        .btn-hover { transition: all 0.2s ease-in-out; }
+        .btn-hover:hover { transform: translateY(-2px); filter: brightness(1.1); }
     </style>
 </head>
-<body class="pb-12">
+<body class="pb-20">
 
-    <nav class="gradient-brand text-white p-6 mb-8 shadow-xl">
+    <nav class="gradient-header text-white p-6 mb-8 shadow-2xl">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="text-center md:text-left">
                 <h1 class="text-3xl font-extrabold tracking-tighter">DISTRILECO S.A.S.</h1>
-                <p class="text-blue-100 text-xs font-semibold uppercase tracking-widest opacity-80">Gestión Comercial y Operativa - Bajo Cauca</p>
+                <p class="text-blue-200 text-xs font-bold uppercase tracking-widest opacity-90 italic">Análisis Regional Bajo Cauca</p>
             </div>
-            <div class="bg-white/10 backdrop-blur-md px-4 py-2 rounded-2xl border border-white/20 text-center">
-                <p id="clock" class="text-sm font-bold"></p>
-                <p class="text-[10px] uppercase opacity-70">Caucasia, Antioquia | COP ($)</p>
+            <div class="bg-white/10 px-5 py-2 rounded-2xl border border-white/20 text-center backdrop-blur-sm">
+                <p id="clock" class="text-sm font-mono font-bold"></p>
+                <p class="text-[10px] uppercase font-semibold">Caucasia, Antioquia | COP ($)</p>
             </div>
         </div>
     </nav>
 
-    <main class="max-w-6xl mx-auto px-4 space-y-8">
+    <main class="max-w-6xl mx-auto px-4 space-y-6">
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <button onclick="enviarWhatsApp()" class="btn-action bg-[#25D366] text-white p-4 rounded-2xl font-bold flex items-center justify-center gap-3 shadow-lg">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.891 11.891-11.891 3.181 0 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.481 8.403 0 6.556-5.332 11.891-11.891 11.891-2.01 0-3.98-.511-5.718-1.483l-6.275 1.644zm6.115-4.695l.366.218c1.554.922 3.332 1.409 5.158 1.409 5.404 0 9.801-4.397 9.801-9.801s-4.397-9.801-9.801-9.801-9.801 4.397-9.801 9.801c0 1.947.581 3.841 1.68 5.438l.237.341-1.104 4.032 4.128-1.082z"/></svg>
-                Enviar Reporte a Dirección
-            </button>
-            <div class="bg-blue-50 border border-blue-200 p-4 rounded-2xl flex items-center justify-center gap-3 text-blue-800 italic text-sm">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                "Los datos de 2025 reflejan una utilidad más sincera y transparente."
+        <section class="glass-card p-6 border-l-8 border-blue-600 shadow-lg">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="p-2 bg-blue-100 rounded-lg text-blue-700 font-bold text-xl">💸</div>
+                <h3 class="font-extrabold text-slate-700 uppercase tracking-tight text-sm">Simulador de Utilidad Real (Antes de Impuestos)</h3>
             </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-end">
+                <div>
+                    <label class="text-slate-500 text-[10px] font-black uppercase mb-2 block">Ingresos Totales / Ventas del Mes</label>
+                    <input type="number" id="inputVentas" placeholder="Ingresa ventas totales en pesos..." 
+                           class="w-full p-4 glass-card bg-slate-50 border-slate-200 outline-none focus:ring-2 focus:ring-blue-500 font-mono text-lg">
+                </div>
+                <button onclick="calcularUtilidad()" class="btn-hover bg-blue-600 text-white font-black py-4 rounded-2xl shadow-lg shadow-blue-200 uppercase text-sm tracking-widest">
+                    Calcular Margen de Rentabilidad
+                </button>
+            </div>
+
+            <div id="resultadoUtilidad" class="hidden mt-6 p-6 bg-slate-50 rounded-2xl border-2 border-dashed border-blue-200 animate-pulse-slow">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <p class="text-slate-500 text-[10px] font-bold uppercase">Utilidad Neta Proyectada</p>
+                        <h2 id="valorUtilidad" class="text-4xl font-black text-slate-800 tracking-tighter"></h2>
+                    </div>
+                    <div class="flex flex-col justify-center md:items-end">
+                        <span id="margenUtilidad" class="px-4 py-2 bg-blue-600 text-white rounded-full text-xs font-black shadow-md"></span>
+                        <p class="text-[10px] text-slate-400 mt-2 italic font-medium uppercase">Cálculo basado en gastos totales 2025: $4.824M</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <button onclick="enviarWhatsApp()" class="btn-hover bg-[#25D366] text-white p-4 rounded-2xl font-black flex items-center justify-center gap-3 shadow-lg shadow-green-100">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.891 11.891-11.891 3.181 0 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.481 8.403 0 6.556-5.332 11.891-11.891 11.891-2.01 0-3.98-.511-5.718-1.483l-6.275 1.644zm6.115-4.695l.366.218c1.554.922 3.332 1.409 5.158 1.409 5.404 0 9.801-4.397 9.801-9.801s-4.397-9.801-9.801-9.801-9.801 4.397-9.801 9.801c0 1.947.581 3.841 1.68 5.438l.237.341-1.104 4.032 4.128-1.082z"/></svg>
+                WhatsApp a la Gerencia
+            </button>
+            <button onclick="copyToExcel()" class="btn-hover bg-slate-800 text-white p-4 rounded-2xl font-black flex items-center justify-center gap-3 shadow-lg shadow-slate-200">
+                📊 Copiar para Microsoft Excel
+            </button>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div class="glass-card p-5 accent-border">
-                <p class="text-slate-400 text-[10px] font-bold uppercase mb-1">Inversión en Mantenimiento</p>
-                <h2 class="text-2xl font-black">$394M</h2>
-                <p class="text-[10px] text-blue-600 font-medium mt-1">Sinceramiento contable vs 2024</p>
+            <div class="glass-card p-5 border-l-4 border-blue-600">
+                <p class="text-slate-400 text-[10px] font-black uppercase tracking-widest">Mantenimiento 2025</p>
+                <h2 class="text-2xl font-black text-slate-800">$394.7M</h2>
+                <p class="text-[9px] text-blue-600 font-bold mt-1">Sincerado (Tratamiento Real)</p>
             </div>
-            <div class="glass-card p-5 border-l-5 border-green-500" style="border-left-width: 5px;">
-                <p class="text-slate-400 text-[10px] font-bold uppercase mb-1">Ahorro Logístico/Bancos</p>
-                <h2 class="text-2xl font-black text-green-600">$100M</h2>
-                <p class="text-[10px] text-slate-500 font-medium mt-1">Éxito por Bancarización Digital</p>
+            <div class="glass-card p-5 border-l-4 border-emerald-500">
+                <p class="text-slate-400 text-[10px] font-black uppercase tracking-widest">Ahorro Bancario</p>
+                <h2 class="text-2xl font-black text-emerald-600">$100M</h2>
+                <p class="text-[9px] text-emerald-500 font-bold mt-1">Éxito en Bancarización Digital</p>
             </div>
-            <div class="glass-card p-5 border-l-5 border-red-500" style="border-left-width: 5px;">
-                <p class="text-slate-400 text-[10px] font-bold uppercase mb-1">Cuentas Incobrables</p>
-                <h2 class="text-2xl font-black text-red-600">$53M</h2>
-                <p class="text-[10px] text-red-400 font-medium mt-1">Deterioro de Cartera (+3 años)</p>
+            <div class="glass-card p-5 border-l-4 border-rose-500">
+                <p class="text-slate-400 text-[10px] font-black uppercase tracking-widest">Cartera Crítica</p>
+                <h2 class="text-2xl font-black text-rose-600">$53.6M</h2>
+                <p class="text-[9px] text-rose-400 font-bold mt-1">Deterioro +3 años antigüedad</p>
             </div>
-            <div class="glass-card p-5 border-l-5 border-indigo-500" style="border-left-width: 5px;">
-                <p class="text-slate-400 text-[10px] font-bold uppercase mb-1">Gasto Personal</p>
-                <h2 class="text-2xl font-black">$1.879M</h2>
-                <p class="text-[10px] text-slate-500 font-medium mt-1">Ajuste normal por SMLV (3.9%)</p>
+            <div class="glass-card p-5 border-l-4 border-slate-700">
+                <p class="text-slate-400 text-[10px] font-black uppercase tracking-widest">Depreciaciones</p>
+                <h2 class="text-2xl font-black text-slate-700">$196.5M</h2>
+                <p class="text-[9px] text-slate-500 font-bold mt-1">Estrategia fiscal de utilidad</p>
             </div>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div class="glass-card p-6 lg:col-span-2">
-                <h3 class="font-bold text-slate-700 mb-6 flex items-center gap-2">
-                    <span class="w-2 h-6 bg-blue-600 rounded"></span>
-                    EVOLUCIÓN DE GASTOS 2024-2025
+                <h3 class="font-black text-slate-700 mb-6 flex items-center gap-2 text-xs uppercase italic">
+                    <span class="w-1.5 h-4 bg-blue-600"></span> Comparativa Dinámica 2024 vs 2025
                 </h3>
-                <div class="h-[350px]">
+                <div class="h-[320px]">
                     <canvas id="mainChart"></canvas>
                 </div>
             </div>
             
-            <div class="glass-card p-6 bg-slate-900 text-white">
-                <h3 class="font-bold text-blue-400 mb-6 uppercase text-sm tracking-widest">Medidas Gerenciales 2026</h3>
+            <div class="glass-card p-6 bg-slate-900 text-white shadow-2xl">
+                <h3 class="font-black text-blue-400 mb-6 uppercase text-[10px] tracking-[0.2em]">Medidas de Contingencia</h3>
                 <div class="space-y-6">
-                    <div>
-                        <h4 class="text-blue-300 font-bold text-xs mb-1 uppercase tracking-tighter">1. Gestión de Cartera</h4>
-                        <p class="text-[11px] leading-relaxed text-slate-300">Sanear los <b>$53M</b> de cuentas de hace 3 años. Se requiere política de crédito más estricta en el Bajo Cauca para evitar nuevas pérdidas.</p>
+                    <div class="border-l border-blue-600/30 pl-3">
+                        <h4 class="text-blue-300 font-black text-[10px] uppercase">🚨 Cobro de Cartera</h4>
+                        <p class="text-[11px] leading-relaxed text-slate-400 mt-1">Liquidar o sanear los <b>$53M</b> de cuentas incobrables. Reforzar garantías en créditos nuevos en Bajo Cauca.</p>
                     </div>
-                    <div>
-                        <h4 class="text-blue-300 font-bold text-xs mb-1 uppercase tracking-tighter">2. Transparencia Financiera</h4>
-                        <p class="text-[11px] leading-relaxed text-slate-300">Explicar a bancos que el gasto de <b>Mantenimiento y Depreciación</b> ($591M) es un ajuste de transparencia, no una baja en eficiencia.</p>
+                    <div class="border-l border-blue-600/30 pl-3">
+                        <h4 class="text-blue-300 font-black text-[10px] uppercase">🏦 Relación Bancaria</h4>
+                        <p class="text-[11px] leading-relaxed text-slate-400 mt-1">Presentar el gasto de mantenimiento como <b>sinceramiento financiero</b> ante bancos para no afectar la calificación crediticia.</p>
                     </div>
-                    <div>
-                        <h4 class="text-blue-300 font-bold text-xs mb-1 uppercase tracking-tighter">3. Eficiencia Digital</h4>
-                        <p class="text-[11px] leading-relaxed text-slate-300">Mantener la estrategia de <b>Bancarización</b> que ahorró casi $100M en comisiones bancarias y 4x1000.</p>
+                    <div class="border-l border-blue-600/30 pl-3">
+                        <h4 class="text-blue-300 font-black text-[10px] uppercase">💻 Digitalización</h4>
+                        <p class="text-[11px] leading-relaxed text-slate-400 mt-1">Mantener el ahorro de <b>$100M</b> fomentando consignaciones por banco y evitando comisiones nacionales en efectivo.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="glass-card overflow-hidden">
-            <div class="p-6 border-b flex justify-between items-center bg-white">
-                <h3 class="font-extrabold text-slate-700 text-sm uppercase">Detalle Contable - Justificaciones Administrativas</h3>
-                <button onclick="copyTable()" class="text-xs bg-slate-100 px-3 py-1 rounded-full font-bold hover:bg-slate-200">Copiar para Excel</button>
+        <div class="glass-card overflow-hidden shadow-xl">
+            <div class="p-6 bg-white border-b flex justify-between items-center">
+                <h3 class="font-black text-slate-700 uppercase text-xs">Informe Detallado de Gastos Operativos</h3>
+                <span class="bg-blue-100 text-blue-800 text-[10px] font-black px-3 py-1 rounded-full uppercase">Cifras en COP</span>
             </div>
             <div class="overflow-x-auto">
                 <table id="tablaFinanciera" class="w-full text-left text-xs">
                     <thead>
-                        <tr class="bg-slate-50 text-slate-500 border-b">
-                            <th class="px-6 py-4">Concepto</th>
-                            <th class="px-6 py-4 text-right">2025 (COP)</th>
-                            <th class="px-6 py-4 text-right">Var %</th>
-                            <th class="px-6 py-4">Justificación Administrativa</th>
+                        <tr class="bg-slate-50 text-slate-500 border-b font-black uppercase text-[9px]">
+                            <th class="px-6 py-4 tracking-tighter">Rubro</th>
+                            <th class="px-6 py-4 text-right">31/12/2025</th>
+                            <th class="px-6 py-4 text-right">Variación %</th>
+                            <th class="px-6 py-4">Observación Oficial Administrativa</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-slate-100">
+                    <tbody class="divide-y divide-slate-100 font-medium">
                         </tbody>
                 </table>
             </div>
@@ -123,75 +151,108 @@
 
     </main>
 
-    <footer class="mt-12 text-center text-slate-400 p-8 border-t border-slate-200">
-        <p class="text-xs font-bold uppercase tracking-widest">Propiedad Intelectual de <strong>Vibras Positivas</strong></p>
-        <p class="text-[10px] mt-2 italic">© 2026 Distrileco S.A.S. - Análisis Bajo Cauca Antioqueño</p>
+    <footer class="mt-16 text-center text-slate-400 p-10 border-t border-slate-200 bg-white/50">
+        <p class="text-xs font-black uppercase tracking-[0.3em] text-slate-600">PROYECTO: ANALISIS MISA</p>
+        <p class="text-[10px] font-bold mt-2 uppercase">Desarrollado para <strong>Vibras Positivas</strong></p>
+        <p class="text-[9px] mt-1 italic font-medium">© 2026 Distrileco S.A.S. - Todos los derechos reservados.</p>
     </footer>
 
     <script>
+        // DATOS REALES EXTRAÍDOS DE TUS IMÁGENES
         const datos = [
-            { c: "Personal", v25: 1879270936, v24: 1808517207, obs: "Aumento por ajuste de ley (SMLV)." },
-            { c: "Servicios", v25: 587356453, v24: 802539438, obs: "Optimización de flete y tasas de seguridad EPM." },
-            { c: "Mantenimiento", v25: 394759255, v24: 73428471, obs: "Sinceramiento: Antes se activaba a vehículos." },
-            { c: "Financieros", v25: 661534039, v24: 800432978, obs: "Ahorro por bancarización y menos uso de efectivo." },
-            { c: "Depreciación", v25: 196571657, v24: 0, obs: "Estrategia fiscal para reflejar utilidad real." },
-            { c: "Deterioro", v25: 53675048, v24: 59800, obs: "Cuentas incobrables con más de 3 años de antigüedad." },
-            { c: "Honorarios", v25: 77528110, v24: 43199819, obs: "Vinculación de personal pensionado por servicios." }
+            { c: "Gastos Personal", v25: 1879270936, v24: 1808517207, obs: "Aumento normal por ajuste del SMLV de ley." },
+            { c: "Servicios", v25: 587356453, v24: 802539438, obs: "Ahorro del 26.8% en fletes y tasas de seguridad EPM." },
+            { c: "Mantenimiento", v25: 394759255, v24: 73428471, obs: "Sincerado: Antes se activaba a vehículos para rentabilidad." },
+            { c: "Financieros", v25: 661534039, v24: 800432978, obs: "Ahorro de $100M por bancarización y transferencias." },
+            { c: "Depreciación", v25: 196571657, v24: 0, obs: "Estrategia fiscal para reflejar utilidad real del negocio." },
+            { c: "Deterioro", v25: 53675048, v24: 59800, obs: "Cuentas incobrables (+3 años) sin posibilidad de recaudo." },
+            { c: "Honorarios", v25: 77528110, v24: 43199819, obs: "Aumentó por vinculación de personal pensionado." },
+            { c: "Arrendamientos", v25: 4405044, v24: 1594159, obs: "Aumento por nuevos puntos de góndolas en tiendas." },
+            { c: "Diversos", v25: 503421798, v24: 516973602, obs: "Baja leve por optimización de combustible." }
         ];
 
-        // Llenar Tabla
+        // RENDERIZAR TABLA CON LÓGICA
         const tbody = document.querySelector('#tablaFinanciera tbody');
         datos.forEach(d => {
             const variacion = d.v24 === 0 ? "Nuevo" : (((d.v25 - d.v24) / d.v24) * 100).toFixed(1) + "%";
             tbody.innerHTML += `
                 <tr class="hover:bg-blue-50/50 transition duration-150">
-                    <td class="px-6 py-4 font-bold text-slate-700 uppercase">${d.c}</td>
-                    <td class="px-6 py-4 text-right font-mono font-semibold">$${d.v25.toLocaleString('es-CO')}</td>
-                    <td class="px-6 py-4 text-right font-bold ${parseFloat(variacion) > 10 ? 'text-red-500' : 'text-green-600'}">${variacion}</td>
-                    <td class="px-6 py-4 text-slate-500 italic">${d.obs}</td>
+                    <td class="px-6 py-4 font-black text-slate-700 uppercase tracking-tighter text-[10px]">${d.c}</td>
+                    <td class="px-6 py-4 text-right font-mono font-bold text-slate-800">$${d.v25.toLocaleString('es-CO')}</td>
+                    <td class="px-6 py-4 text-right font-black ${parseFloat(variacion) > 10 ? 'text-rose-600' : 'text-emerald-600'}">${variacion}</td>
+                    <td class="px-6 py-4 text-slate-500 italic text-[10px] leading-tight">${d.obs}</td>
                 </tr>`;
         });
 
-        // Reloj Colombia
+        // SIMULADOR DE UTILIDAD NETA
+        function calcularUtilidad() {
+            const ventas = document.getElementById('inputVentas').value;
+            const gastosTotales = 4824952710; 
+            
+            if (ventas > 0) {
+                const utilidad = ventas - gastosTotales;
+                const margen = (utilidad / ventas) * 100;
+                
+                document.getElementById('resultadoUtilidad').classList.remove('hidden');
+                document.getElementById('valorUtilidad').innerText = '$' + Math.round(utilidad).toLocaleString('es-CO');
+                document.getElementById('margenUtilidad').innerText = `Margen de Rentabilidad: ${margen.toFixed(2)}%`;
+                
+                // Estilo si es pérdida o ganancia
+                const container = document.getElementById('resultadoUtilidad');
+                const text = document.getElementById('valorUtilidad');
+                if (utilidad < 0) {
+                    container.style.borderColor = "#f43f5e";
+                    text.style.color = "#e11d48";
+                } else {
+                    container.style.borderColor = "#10b981";
+                    text.style.color = "#047857";
+                }
+            } else {
+                alert("Socia, por favor ingresa un valor de ventas válido.");
+            }
+        }
+
+        // RELOJ TIEMPO REAL (COLOMBIA)
         setInterval(() => {
             document.getElementById('clock').innerText = new Date().toLocaleString('es-CO', { 
-                weekday: 'long', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', second: '2-digit' 
+                weekday: 'long', day: 'numeric', month: 'short', year: 'numeric', 
+                hour: '2-digit', minute: '2-digit', second: '2-digit' 
             });
         }, 1000);
 
-        // Gráfico Pro
+        // GRÁFICO COMPARATIVO
         const ctx = document.getElementById('mainChart').getContext('2d');
         new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: datos.map(d => d.c),
                 datasets: [
-                    { label: '2025 (COP)', data: datos.map(d => d.v25), backgroundColor: '#2563eb', borderRadius: 8 },
-                    { label: '2024 (COP)', data: datos.map(d => d.v24), backgroundColor: '#94a3b8', borderRadius: 8 }
+                    { label: '2025 (COP)', data: datos.map(d => d.v25), backgroundColor: '#1e40af', borderRadius: 6 },
+                    { label: '2024 (COP)', data: datos.map(d => d.v24), backgroundColor: '#cbd5e1', borderRadius: 6 }
                 ]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                plugins: { legend: { position: 'top', labels: { font: { weight: 'bold' } } } },
+                plugins: { legend: { position: 'bottom', labels: { font: { weight: 'bold', size: 10 } } } },
                 scales: { y: { beginAtZero: true, grid: { display: false } }, x: { grid: { display: false } } }
             }
         });
 
+        // REPORTES
         function enviarWhatsApp() {
-            const msg = `*REPORTE GERENCIAL DISTRILECO 2025*%0A` +
+            const msg = `*REPORTE ESTRATÉGICO DISTRILECO 2025*%0A` +
                         `------------------------------%0A` +
-                        `🏦 *Finanzas:* Ahorro de $100M en bancos por digitalización.%0A` +
-                        `⚙️ *Mantenimiento:* $394M (Sinceramiento de activos).%0A` +
-                        `🚨 *Cartera:* Alerta por $53M incobrables (+3 años).%0A` +
-                        `📊 *Utilidad:* Ajustada por depreciación ($196M).%0A` +
+                        `📊 *Finanzas:* Ahorro de $100M en bancos por transferencias.%0A` +
+                        `🛠️ *Sinceramiento:* $394M en mantenimiento (Real).%0A` +
+                        `🚩 *Alerta Cartera:* $53.6M incobrables (+3 años).%0A` +
                         `------------------------------%0A` +
                         `_Generado por Vibras Positivas_`;
             window.open(`https://wa.me/573117700431?text=${msg}`, '_blank');
         }
 
-        function copyTable() {
-            alert("Socia, selecciona la tabla, cópiala y pégala en Excel. Se mantendrán las justificaciones y los valores moneda.");
+        function copyToExcel() {
+            alert("Socia, selecciona la tabla, cópiala (Ctrl+C) y pégala en Excel. Se mantienen los formatos de COP.");
         }
     </script>
 </body>
